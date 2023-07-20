@@ -35,7 +35,7 @@ new_size=$(fdisk -l bc3-1.img|tail -1|awk '{print $3}')
 echo Truncate $img_file to $new_size
 read -p "Do you want to proceed ? (yes/no) " yn
 case $yn in 
-	yes ) echo ok, we will proceed;;
+	yes ) echo ok, truncate...;;
 	no ) echo exiting...;
 		exit;;
 	* ) echo invalid response;
