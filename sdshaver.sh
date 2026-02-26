@@ -31,7 +31,7 @@ gparted $next_loopdev
 echo Freeing $img_file from $next_loopdev
 losetup -d $next_loopdev
 check_command 
-new_size=$(fdisk -l bc3-1.img|tail -1|awk '{print $3}')
+new_size=$(fdisk -l $img_file|tail -1|awk '{print $3}')
 echo Truncate $img_file to $new_size
 read -p "Do you want to proceed ? (yes/no) " yn
 case $yn in 
